@@ -67,8 +67,8 @@
 
         // isNaN("car")
 
-        var num1 = parseInt(prompt("enter first number"));
-        var num2 = parseInt(prompt("enter second number"));
+        // var num1 = parseInt(prompt("enter first number"));
+        // var num2 = parseInt(prompt("enter second number"));
 
         // document.write(num1+num2);
         // document.write(num1-num2);
@@ -82,25 +82,32 @@
             // alert(false)
         // }
 
- var  percentage= parseInt(prompt(" enter percentager"));
+ var  per= parseInt(prompt(" enter percentager"));
          
-    if (per> 80 ) {
+    if (per>= 80 ) {
         alert("you have obtanted A+🎉");
     } else if(per <=80 && per>=70 ) {     
+        alert("you have obtanted A 😍");
     }
-    alert("you have obtanted A 😍");
      else if(per <=70 && per>=60 ) {
-        
-    }alert("you have obtanted B 😁");
+   alert("you have obtanted B 😁");
+      }   
      else if(per <=60 && per>=50 ) {
-        
-    }alert("you have obtanted C 😉");
-     else if(per <=50 && per>=40 ) {
-        
-    }alert("you have obtanted D 👀");
-     else if(per <40  ) {
-        
+         alert("you have obtanted C 😉");
+        }
+        else if(per <=50 && per>=40 ) {
+         alert("you have obtanted D 👀");
+     
+        }else if(per <40  )
+       {alert("you have obtanted fail😎");
+       
+    }else{
+        alert("invalid input");
+ 
     }
+
+
+
         </script>
 </body>
 </html>
