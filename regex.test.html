@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .name{
+            position: absolute;
+            bottom: 71%;
+            left: 45%;
+            padding: 6px 35px;
+            background-color: aqua;
+            border-radius: 10px;
+            
+        }
+        .Email{
+            position: absolute;
+            bottom: 63%;
+            left: 45%;
+            padding: 6px 35px;
+            background-color: aqua;
+            border-radius: 10px;
+        }
+        .phone{
+            position: absolute;
+            bottom: 55%;
+            left: 45%;
+            padding: 6px 35px;
+            background-color: aqua;
+            border-radius: 10px;
+        }
+        .submit{
+            position: absolute;
+            bottom: 45%;
+            left: 45%;
+            padding: 6px 35px;
+            background-color: aqua;
+            border-radius: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="enter your name" id="fname" class="name"><br>
+    <input type="text" placeholder="enter your Email" id="Email" class="Email"><br>
+    <input type="text" placeholder="enter your phone number" id="phone num" class="phone"><br>
+    <p id="msg"></p>
+    <button class="submit" type="submit" onclick="func()" >submit</button>
+    
+    <script>
+        function func(){
+            var name = document. getElementById("fname").value;
+            var exp =/^[A-z ]{3,20}$/gm;
+            if (exp.test(name)) {
+                document.getElementById("msg").innerHTML="valid"; 
+                document.getElementById("msg").style.color="green";                
+            } else {
+                document.getElementById("msg").innerHTML="invalid";
+                document.getElementById("msg").style.color="black";   
+            }
+        }
+        function func(){
+            var name = document. getElementById("Email").value;
+            var exp =/^[A-z 0-9]{10,30}@[A-z ]{3,10}.[A-z]{2,6}$/gm;
+            if (exp.test(Email)) {
+                document.getElementById("msg").innerHTML="valid"; 
+                document.getElementById("msg").style.color="green";                
+            } else {
+                document.getElementById("msg").innerHTML="invalid";
+                document.getElementById("msg").style.color="black";   
+            }
+        }
+        function func(){
+            var name = document. getElementById("phone num").value;
+            var exp =/^[0-9+-]{11,20}$/gm;
+            if (exp.test(name)) {
+                document.getElementById("msg").innerHTML="valid"; 
+                document.getElementById("msg").style.color="green";                
+            } else {
+                document.getElementById("msg").innerHTML="invalid";
+                document.getElementById("msg").style.color="black";   
+            }
+        }
+        </script>
+</body>
+</html>
