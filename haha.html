@@ -63,16 +63,31 @@
 var student={
     name:"joni",
     email:"joni@gemail.com",
-    phone: "03186954955",
-    address:{
+    phone: 12132456789,
+    age:()=>{
+        return 24;
+    },
+    food:["biryani", "nihari"],
+address:{
         street:"5th street",
         city:"karachi",
         country:"Pakistan"
     },
-
 }
-document.write(student);
 
+// document.write(student.name, "<br>",
+//  student.email, "<br>",
+//   student.phone, "<br>",
+//    student.age(), "<br>",
+//     student.food, "<br>",
+//      student.address.street, "<br>",
+//       student.address.city, "<br>",
+//        student.address.country);
+
+for (const value of Object.values(student)) {
+    document.write(value, "<br>");
+    
+}
 
     </script>
 </body>
