@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marksheet</title>
+</head>
+<body>
+    <h1>STUDENT DETAIL</h1>
+    <input type="text" name="" id="fname" placeholder="name" required>
+    <input type="number" name="" id="finstitute" placeholder="institute" required>
+    <input type="email" name="" id="fbatch" placeholder="batch" required>
+    <h1>marks</h1>
+    <input type="number" name="" id="fhtml" placeholder="HTML" required>
+    <input type="number" name="" id="fcss" placeholder="CSS" required>
+    <input type="number" name="" id="fjs" placeholder="JS" required>
+    <button type="submit" onclick="calculate()">Submit</button><br><br>
+
+
+<h3>
+    <table border="2" >
+    <th >name</th> 
+     <th>institution</th>
+    <th>batch</th>
+    <th>html</th>
+    <th>css</th>
+    <th>js</th>
+    <th>Obtained Marks</th>
+    <th>Percentage</th>
+    <th>grade</th>
+    <!-- <button type="submit" onclick="remove()" >remove</i></button> -->
+
+        <tr>
+        <td id="name"></td>
+        <td id="institute"></td>
+        <td id="batch"></td>
+        <td id="html"></td>
+        <td id="css"></td>
+        <td id="js"></td>
+        <td id="ob marks"></td>
+        <td id="percentage"></td>
+        <td id="grade"></td>
+        <td >
+            <button type="submit" onclick="remove()" >remove</i></button>
+        </td>
+    </tr></table></h3>
+    <script>
+        function calculate() {
+            var name = document.getElementById("fname").value;
+            document.getElementById("name").innerHTML=name;
+            localStorage.setItem("name",name );
+            
+            var institute = document.getElementById("finstitute").value;
+            document.getElementById("institute").innerHTML=institute;
+            localStorage.setItem("institute",institute);
+
+            var batch = document.getElementById("fbatch").value;
+            document.getElementById("batch").innerHTML=batch;
+            localStorage.setItem("batch",batch);
+
+            var html = parseInt(document.getElementById("fhtml").value);
+            document.getElementById("html").innerHTML=html;
+            localStorage.setItem("html",html);
+
+            var css = parseInt(document.getElementById("fcss").value);
+            document.getElementById("css").innerHTML=css;
+            localStorage.setItem("css",css);
+
+            var js = parseInt(document.getElementById("fjs").value);
+            document.getElementById("js").innerHTML=js;
+            localStorage.setItem("js",js);
+
+             var Obtained=parseInt(html)+parseInt(css)+parseInt(js); 
+              document.getElementById("ob marks").innerHTML=Obtained;
+              localStorage.setItem("Obtained",Obtained);
+
+              var per=((Obtained*100/300).toFixed(2));
+              document.getElementById("percentage").innerHTML=per+"%";
+              localStorage.setItem("percentage",per);
+     
+            if (per>=80 && per<=100) {
+              var grade=  document.getElementById("grade").innerHTML="A";
+            }else if (per>=70 && per<=80) {
+              var grade=  document.getElementById("grade").innerHTML="B";
+            } else if(per>=60 && per<=70) {
+             var grade=   document.getElementById("grade").innerHTML="C";
+            }else if (per>=50 && per<=60) {
+              var grade=  document.getElementById("grade").innerHTML="D";
+            }else if (per>=40 && per<=50) {
+              var grade=  document.getElementById("grade").innerHTML="E";
+            }else if (per>=0 && per<=40) {
+              var grade=  document.getElementById("grade").innerHTML="Fail";
+              } 
+              else {
+              var grade=  document.getElementById("grade").innerHTML="Invalid";
+              }
+              localStorage.setItem("grade",grade);
+        }
+         
+
+        function remove() {
+            localStorage.removeItem("name");
+            localStorage.removeItem("institute");
+            localStorage.removeItem("batch");
+            localStorage.removeItem("html");
+            localStorage.removeItem("css");
+            localStorage.removeItem("js");
+            localStorage.removeItem("Obtained");
+            localStorage.removeItem("percentage");
+            localStorage.removeItem("grade");
+            window.location.reload();
+        }
+         
+ 
+    </script>
+
+  
+       
+
+   
+</body>
+</html>
