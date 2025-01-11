@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="fname"><br>
+    <p id="msg"></p>
+
+    <button type="submit" onclick="func()">submit</button>
+    
+    <script>
+        function func(){  function func(){
+            var name = document. getElementById("fname").value;
+            var exp =/^[A-z ]{3,20}$/gm;
+            if (exp.test(name)) {
+                document.getElementById("msg").innerHTML="valid"; 
+                document.getElementById("msg").style.color="yellow";                
+            } else {
+                document.getElementById("msg").innerHTML="invalid";
+                document.getElementById("msg").style.color="green";   
+            }
+        }}
+    </script>
+</body>
+</html>

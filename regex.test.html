@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="name" placeholder="enter your name" id="fname" ><br>
+    <p id="test"></p>
+    <input type="Email" placeholder="enter your Email" id="Email" ><br>
+    <p id="test"></p>
+    <input type="phone num" placeholder="enter your phone number" id="phone num"><br>
+    <p id="test"></p>
+    <button class="submit" type="submit" onclick="func()" >submit</button>
+    
+    <script>
+        function func(){
+            var name = document. getElementById("fname").value;
+             var exp =/^[A-z ]{3,20}$/gm;
+            var Email = document. getElementById("Email").value;
+            var exp =/^[A-z 0-9]{10,30}@[A-z ]{3,10}.[A-z]{2,6}$/gm;
+            var phone = document. getElementById("phone num").value;
+            var exp =/^[0-9+-]{11,20}$/gm;
+           
+            if (exp.test(name) && exp.test(Email) && exp.test(phone)) {
+                document.getElementById("msg").innerHTML="valid"; 
+                document.getElementById("msg").style.color="green";}                
+              else {
+                document.getElementById("msg").innerHTML="invalid";
+                document.getElementById("msg").style.color="black";   
+            }}
+        // function func(){
+        //     var name = document. getElementById("Email").value;
+        //     var exp =/^[A-z 0-9]{10,30}@[A-z ]{3,10}.[A-z]{2,6}$/gm;
+        //     if (exp.test(Email)) {
+        //         document.getElementById("msg").innerHTML="valid"; 
+        //         document.getElementById("msg").style.color="green";                
+        //     } else {
+        //         document.getElementById("msg").innerHTML="invalid";
+        //         document.getElementById("msg").style.color="black";   
+        //     }
+        // }
+        // function func(){
+        //     var name = document. getElementById("phone num").value;
+        //     var exp =/^[0-9+-]{11,20}$/gm;
+        //     if (exp.test(name)) {
+        //         document.getElementById("msg").innerHTML="valid"; 
+        //         document.getElementById("msg").style.color="green";                
+        //     } else {
+        //         document.getElementById("msg").innerHTML="invalid";
+        //         document.getElementById("msg").style.color="black";   
+        //     }
+        // }
+        </script>
+</body>
+</html>
